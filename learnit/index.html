@@ -1,0 +1,88 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Hello World</title>
+<body>
+<script src="../pixi.js/dist/pixi.js"></script>
+<!--<script src="js/pixi_code.js"></script>-->
+<script>
+//Test that Pixi is working
+console.log(PIXI);
+//Create the renderer
+var autoDetectRenderer = PIXI.autoDetectRenderer;
+var Container = PIXI.Container;
+var loader = PIXI.loader;
+var Sprite = PIXI.Sprite;
+var TextureCache = PIXI.TextureCache;
+var Rectangle = PIXI.Rectangle;
+    
+var renderer = autoDetectRenderer(512, 512);
+
+//Add the canvas to the HTML document
+document.body.appendChild(renderer.view);
+
+//Create a container object called the `stage`
+var stage = new Container();
+
+loader
+  .add("images/treasureHunter.json")
+  .load(setup);
+
+var dungeon, explorer, treasure, door, id;
+    
+function setup() {
+    id = PIXI.loader.resources["images/treasureHunter.json"].textures;
+
+    dungeon = new Sprite(id["dungeon.png"]);
+    stage.addChild(dungeon);    
+    
+    treasure = new Sprite(id["treasure.png"]);
+    stage.addChild(treasure);
+    
+    explorer = new Sprite(id["explorer.png"]);    
+    stage.addChild(explorer);
+
+    explorer.x = 68;
+    explorer.y = stage.height / 2 - explorer.height / 2;
+    
+    treasure.x = stage.width - treasure.width - 48;
+    treasure.y = stage.height / 2; - treasure.height / 2;
+    
+        
+    door = new Sprite(id["door.png"]);
+    door.position.set(32,0);
+    stage.addChild(door);
+    
+    var numberOfBlobs = 6,
+        spacing = 48,
+        xOffset = 150;
+    
+    for (var i = 0; i < numberOfBlobs; i++){ 
+        var blob = new Sprite(id["blob.png"]);
+        
+        //Space each blob horizontally according to the `spacing` value.
+        //`xOffset` determines the point from the left of the screen
+        //at which the first blob should be added.
+        var blobX = spacing * i + xOffset;
+        
+        //Give the blob a random y position
+        //(`randomInt` is a custom function - see below)
+        var blobY = randomInt(0, stage.height - blob.height);
+        
+        
+        blob.x = blobX;
+        blob.y = blobY;
+        
+        stage.addChild(blob);
+    
+    }
+    renderer.render(stage);
+}
+    
+//The `randomInt` helper function
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+    
+
+</script>
+</body>

@@ -1,0 +1,57 @@
+{"frames": {
+
+"blob.png":
+{
+	"frame": {"x":60,"y":0,"w":32,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":24},
+	"sourceSize": {"w":32,"h":24},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"door.png":
+{
+	"frame": {"x":92,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"dungeon.png":
+{
+	"frame": {"x":0,"y":56,"w":512,"h":512},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":512},
+	"sourceSize": {"w":512,"h":512},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"texturePacker.png":
+{
+	"frame": {"x":28,"y":0,"w":32,"h":56},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":56},
+	"sourceSize": {"w":32,"h":56},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"treasure.png":
+{
+	"frame": {"x":0,"y":0,"w":28,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":24},
+	"sourceSize": {"w":28,"h":24},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "texturePacker.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":568},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3373bdff06ba60eccf5e929755dbaaae:b4bf6356952acec572d6a2b3334c3431:43bf632a9169de944bd6b1e900091f6a$"
+}
+}
